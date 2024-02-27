@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+
+
+.nav-items > ul {
+
+    display: flex;
+    
+    list-style-type: none;
+}
+
+.nav-items > ul > li {
+    padding: 8px;
+}
