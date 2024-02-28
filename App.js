@@ -3,12 +3,12 @@ import ReactDOM from "react-dom/client";
 import logo from './img/logo.png';
 const Header = () =>{
     return(
-        <div className="header">
-
+        <div className="header"> 
             <div className="logo-container">
-                <img className="logo" src={logo} alt="" />
-            </div> 
-
+                <img 
+                className="logo" src={logo}
+                />
+            </div>             
             <div className="nav-items">
                 <ul>
                     <li>Home</li>
@@ -16,23 +16,47 @@ const Header = () =>{
                     <li>Contact</li>
                     <li>Cart</li>
                 </ul>
-            </div>
-        </div>
-    )
+            </div> 
+        </div> 
+        
+    );
+};
+
+const styleCard = {
+    backgroundColor: "#f0f0f0",
 }
+
+const JewelsCard = () =>{
+    return (
+        <div className="jewel-card" style={styleCard}>
+            <img src="https://t3.ftcdn.net/jpg/05/25/54/06/240_F_525540629_QxKds12GbTjsbqv3WeMQTstCvpvgy6MC.jpg" alt="bangle" />
+            <h3>Bangles</h3>
+        </div>
+    );
+};
+const Body = () => {
+    return (
+    <div className="body">
+            <div className="search">Search</div>
+            <div className="jewel-container">
+                <JewelsCard />
+            </div>
+    </div>
+    );
+};
 const AppLayout =  () => {
     return (
         <div className="app">
-            <div className="header">
-                <Header />
-            </div>
-            
+            <Header />
+            <Body />
         </div>
     )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<AppLayout />)
+
+
 
 
 

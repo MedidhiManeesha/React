@@ -1,18 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .header {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#5c0abb;
+    padding: 10px;
     
 }
 
 
-
 .nav-items > ul {
-
     display: flex;
-    
     list-style-type: none;
+    color: white;
 }
 
 .nav-items > ul > li {
     padding: 8px;
+    
+} 
+
+.jewel-card{
+    width: 200px;
+    height: 300px;
+    border: 1px solid #000;
+}
+
+.search{
+    padding: 10px;
 }
