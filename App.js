@@ -26,11 +26,15 @@ const styleCard = {
     backgroundColor: "#f0f0f0",
 }
 
-const JewelsCard = () =>{
+const JewelsCard = ({orName, price}) =>{
     return (
-        <div className="jewel-card" style={styleCard}>
-            <img src="https://t3.ftcdn.net/jpg/05/25/54/06/240_F_525540629_QxKds12GbTjsbqv3WeMQTstCvpvgy6MC.jpg" alt="bangle" />
-            <h3>Bangles</h3>
+        <div className="jewel-card " style={styleCard}>
+            <img className="gold-card"
+            src="https://t3.ftcdn.net/jpg/05/25/54/06/240_F_525540629_QxKds12GbTjsbqv3WeMQTstCvpvgy6MC.jpg" 
+            alt="bangle" />
+                <h3>{orName}</h3>
+                <h4>{price}</h4>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
     );
 };
@@ -39,7 +43,8 @@ const Body = () => {
     <div className="body">
             <div className="search">Search</div>
             <div className="jewel-container">
-                <JewelsCard />
+                <JewelsCard orName="Bangles" price="4000"/>
+                <JewelsCard orName="earrings"/>
             </div>
     </div>
     );

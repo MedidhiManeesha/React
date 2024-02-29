@@ -15,6 +15,11 @@
 }
 
 
+.jewel-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .nav-items > ul {
     display: flex;
     list-style-type: none;
@@ -27,6 +32,8 @@
 } 
 
 .jewel-card{
+    
+    margin: 20px;
     width: 200px;
     height: 300px;
     border: 1px solid #000;
@@ -34,4 +41,10 @@
 
 .search{
     padding: 10px;
+}
+
+.gold-card{
+    padding: 15px;
+    width: 190px;
+    height: auto;
 }
