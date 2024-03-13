@@ -26,15 +26,19 @@ const styleCard = {
     backgroundColor: "#f0f0f0",
 }
 
-const JewelsCard = ({orName, price}) =>{
+const JewelsCard = (props) =>{
+  const {resData} = props;
+  const {name, cloudinaryImageId, cuisines, avgRating, costForTwo} = resData.info;
     return (
         <div className="jewel-card " style={styleCard}>
             <img className="gold-card"
-            src="https://t3.ftcdn.net/jpg/05/25/54/06/240_F_525540629_QxKds12GbTjsbqv3WeMQTstCvpvgy6MC.jpg" 
+            src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+cloudinaryImageId}
             alt="bangle" />
-                <h3>{orName}</h3>
-                <h4>{price}</h4>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+                <h3>{name}</h3>
+                <h4>{cuisines.join(", ")}</h4>
+                <h4>{avgRating}</h4>
+                <h4>{costForTwo}</h4>
+            {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
         </div>
     );
 };
@@ -147,14 +151,16 @@ const Body = () => {
     <div className="body">
             <div className="search">Search</div>
             <div className="jewel-container">
-                <JewelsCard orName="Bangles" price="4000"/>
-                <JewelsCard orName="earrings" price="5000"/>
+              {/* {resObj.map((restaurant) => (
+              <JewelsCard resData={restaurant}/>
+              ))} */}
             </div>
     </div>
     );
 };
 const AppLayout =  () => {
     return (
+      // nested components
         <div className="app">
             <Header />
             <Body />
