@@ -1,13 +1,22 @@
 import JewelsCard from '../components/JewelsCard';
+import {useState} from 'react';
 import resList from '../utils/mockData';
 
 const Body = () => {
-    return (
+let [listOfRestaurants, setListOfRestaurants] = useState(resList);
+return (
     <div className="body">
-            <div className="search">Search</div>
+            <div className="filter">
+                <button className="filter-btn" onClick={()=>{
+                const filteredItems = listOfRestaurants.filter((res)=> res.info.avgRating >= 4.5)
+                setListOfRestaurants(filteredItems)
+                }}>
+                    Top Rated Restaurants
+                </button>
+            </div>
             <div className="jewel-container">
-            {resList.map((restaurant) => (
-            <JewelsCard resData={restaurant}/>
+            {listOfRestaurants.map((restaurant) => (
+            <JewelsCard key={restaurant.info.id} resData={restaurant}/>
             ))}
             </div>
     </div>

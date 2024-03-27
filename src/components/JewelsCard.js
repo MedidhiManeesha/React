@@ -1,10 +1,7 @@
 import CDN_URL from '../../src/utils/constants'
-
-
 const styleCard = {
     backgroundColor: "#f0f0f0",
 }
-
 const JewelsCard = (props) =>{
     const {resData} = props;
     const {name, cloudinaryImageId, cuisines, avgRating, costForTwo} = resData.info;
@@ -21,5 +18,4 @@ const JewelsCard = (props) =>{
         </div>
     );
 };
-
-export default JewelsCard
+export default JewelsCard;
